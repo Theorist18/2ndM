@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2nd Monstarry Flip Cards</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffe6f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    color: #ff5c99;
+    overflow-y: auto; /* Enable scrolling */
+  }
+  h2 {
+    margin-top: 20px;
+  }
+  video.bgvid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.35;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    max-width: 420px;
+  }
+  .card {
+    width: 180px;
+    height: 220px;
+    perspective: 1000px;
+  }
+  .inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .card:hover .inner {
+    transform: rotateY(180deg);
+  }
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+  }
+  .front {
+    background: #ff99cc;
+    border: 2px solid #ff5c99;
+    font-size: 16px;
+    color: white;
+  }
+  .back {
+    background: #ffffff;
+    color: #ff3d80;
+    transform: rotateY(180deg);
+    font-size: 14px;
+  }
+  @media (max-width: 600px) {
+    .container {
+      gap: 10px;
+    }
+    .card {
+      width: 140px;
+      height: 180px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  /* center last card */
+  .container .card:nth-child(5) {
+    grid-column: 1 / span 2;
+    width: 200px;
+  }
+  @media (max-width: 600px) {
+    .container .card:nth-child(5) {
+      width: 160px;
+    }
+  }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.inner').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flip');
+    });
+  });
+});
+</script>
+<style>
+.inner.flip {
+  transform: rotateY(180deg) !important;
+}
+.card:hover .inner:not(.flip) {
+  transform: rotateY(180deg);
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.inner').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flip');
+    });
+  });
+});
+</script>
+<style>
+.inner.flip {
+  transform: rotateY(180deg) !important;
+}
+/* keep hover for desktop */
+.card:hover .inner:not(.flip) {
+  transform: rotateY(180deg);
+}
+</style>
+</head>
+<body>
+<audio autoplay loop>
+<source src="ikot.mp3" type="audio/mpeg" />
+</audio>
+<h2>Happy 2nd Monstarry ✨</h2>
+<p>Flip each card, love. From Sugoie ➜ Roanne 💞</p>
+
+<div class="container">
+  <div class="card">
+    <div class="inner">
+      <div class="face front"><i class="fa-solid fa-star"></i> Appreciation</div>
+      <div class="face back">Thank u for being my calm, my comfort n my person. U steady me n inspire me to grow every day. I appreciate ur heart so much.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="inner">
+      <div class="face front"><i class="fa-solid fa-heart"></i> Reassurance</div>
+      <div class="face back">Da world can get loud, but wit u, I choose peace. I will stay, care, n understand u. We grow together, slow n gentle, always.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="inner">
+      <div class="face front"><i class="fa-solid fa-face-sad-tear"></i> Apology</div>
+      <div class="face back">I am sorry for da moments I made u feel unheard or unloved. I am learning u, n I wanna always protect ur feelings better.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="inner">
+      <div class="face front"><i class="fa-solid fa-envelope"></i> Love Note</div>
+      <div class="face back">I love da way u see da world, da softness u carry, n da strength behind it. Loving u feels like home n stars at da same time.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="inner">
+      <div class="face front"><i class="fa-solid fa-face-grin-stars"></i> Cute Joy</div>
+      <div class="face back">Hi baby mwa 😋 ur da cutest ever n I am obsessed wit ur smile n ur lil reactions. Thank u for being my joy. Happy 2nd monstarry mwamwa! 🌙💘</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
